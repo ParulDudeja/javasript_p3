@@ -44,6 +44,7 @@ btn.addEventListener("click", addNewJoke);
 const formSearch = document.getElementById("tv-show-form");
 const inputForm = document.getElementById("tv-show-query");
 const btnSearch = document.getElementById("btn-search");
+const divTag = document.getElementById("images-show");
 
 formSearch.addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -59,7 +60,7 @@ const showImages = (shows) => {
     if (result.show.image) {
       const newImg = document.createElement("img");
       newImg.src = result.show.image.medium;
-      document.body.append(newImg);
+      divTag.append(newImg);
     }
   }
 };
