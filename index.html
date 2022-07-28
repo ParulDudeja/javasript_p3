@@ -8,9 +8,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>CLICK on button to get random joke!</h1>
-    <button id="btn">Click me</button>
-    <ul id="joke"></ul>
+    <!-- For random jokes -->
+    <div>
+      <h1>CLICK on button to get random joke!</h1>
+      <button id="btn">Click me</button>
+      <ul id="joke"></ul>
+    </div>
+    <!-- for serch data from api -->
+    <div>
+      <h1>Type TV Show name to search to get its image</h1>
+      <form action="" id="tv-show-form">
+        <input type="text" name="query" id="tv-show-query" />
+        <button id="btn-search" placeholder="Type Tv show name">Search</button>
+      </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
   </body>
