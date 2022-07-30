@@ -48,11 +48,18 @@ const divTag = document.getElementById("images-show");
 
 formSearch.addEventListener("submit", async function (e) {
   e.preventDefault();
-  const searchText = formSearch.elements.query.value;
-  const para = { params: { q: searchText } };
-  const response = await axios.get(`http://api.tvmaze.com/search/shows`, para);
-  showImages(response.data);
-  formSearch.elements.query.value = "";
+  try {
+    const searchText = formSearch.elements.query.value;
+    const para = { params: { q: searchText } };
+    const response = await axios.get(
+      `http://api.tvmaze.com/search/shows`,
+      para
+    );
+    showImages(response.data);
+    formSearch.elements.query.value = "";
+  } catch (e) {
+    return alert("Please refresh the page.");
+  }
 });
 
 const showImages = (shows) => {
